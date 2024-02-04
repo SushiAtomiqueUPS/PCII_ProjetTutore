@@ -6,15 +6,17 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Main {
+
+    // Main du menu principal
     public static void main(String[] args) {
-        //Fenêtre avec pour titre Circle et de taille 500x500
-        javax.swing.JFrame fenetre = new javax.swing.JFrame("Circle");
+        //Fenêtre avec pour titre Cercle et de taille 500x500
+        javax.swing.JFrame fenetre = new javax.swing.JFrame("Cercle");
         fenetre.setPreferredSize(new Dimension(500,500));
         fenetre.setLayout(new java.awt.GridLayout(5,3));
-        //Création d'un bouton start au centre de la fenêtre
-        JButton start = new JButton("Start");
+        //Création d'un bouton Commencer au centre de la fenêtre
+        JButton Commencer = new JButton("Commencer");
         //Action du bouton start : lancement du main du jeu
-        start.addActionListener(new java.awt.event.ActionListener() {
+        Commencer.addActionListener(new java.awt.event.ActionListener() {
             @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 fenetre.setVisible(false);
@@ -23,7 +25,7 @@ public class Main {
         });
         //Création d'un bouton leaderboards en dessous du bouton start
         //JButton leaderboards = new JButton("Leaderboards");
-        fenetre.add(start);
+        fenetre.add(Commencer);
         //fenetre.add(leaderboards);
         fenetre.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         fenetre.pack();

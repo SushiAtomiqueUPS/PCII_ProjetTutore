@@ -2,23 +2,24 @@ package model;
 import javax.swing.*;
 
 public class Jeu {
+    //Classe principale du jeu avec l'ovale, la ligne brisée, le score et les Threads
     public static void main(String[] args) {
         //Initialisation des éléments nécessaires au fonctionnement du jeux
-        JFrame maFenetre = new JFrame("Circle");
+        JFrame maFenetre = new JFrame("Cercle");
         Position pos = new Position();
         Parcours ligne = new Parcours(pos);
         Score score = new Score();
-        view.Affichage a = new view.Affichage(pos,ligne, score);
-        view.Redessine anim = new view.Redessine(a);
+        vue.Affichage a = new vue.Affichage(pos,ligne, score);
+        vue.Redessine redessine = new vue.Redessine(a);
         model.Descendre descend = new model.Descendre(pos);
         AvanceLigne avance = new AvanceLigne(pos);
 
-        //Ajout au la fenêtre JFrame de la vue qui est a et du contrôleur
-        maFenetre.add(anim.getMonAffichage());
-        maFenetre.addMouseListener(new control.ReactionClic(anim.getMonAffichage().getPosition()));
+        //Ajoute à la fenêtre de jeu, l'affichage et le controleur
+        maFenetre.add(redessine.getMonAffichage());
+        maFenetre.addMouseListener(new control.ReactionClic(redessine.getMonAffichage().getPosition()));
 
-        //Démarrage des Threads : redessinne, descend et avance
-        anim.start();
+        //Démmarrage des Threads : redessine, descend, avance et score
+        redessine.start();
         descend.start();
         avance.start();
         score.start();

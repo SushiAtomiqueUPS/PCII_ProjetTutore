@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="ProjetTutore:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/ProjetTutore_jar</output-path>
+    <root id="archive" name="ProjetTutore.jar">
+      <element id="module-output" name="ProjetTutore" />
+    </root>
+  </artifact>
+</component>
